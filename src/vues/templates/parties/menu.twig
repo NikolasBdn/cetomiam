@@ -1,0 +1,12 @@
+
+<!-- Barre de navigation sur le site ((page d'accueil), calculateur (+ nouvelle recette), (mon espace), mes recettes, (recipetest), se connecter) -->
+<div class="menu">
+    <ul>
+   	  <!--<li><a class="active" href="{{ base_url() }}/"><strong>Home</strong></a></li>-->
+	  <li><a class="active bt-calculateur" href=" {{ base_url() }}/calculateur"><strong>+ Nouveau Repas</strong></a></li>
+	  <!--<li><a class="active" href="#contact"><strong>Mon espace</strong></a></li>-->
+	  <li><a class="active" href="{{ base_url() }}/recettes"><strong>Mes recettes</strong></a></li>
+	  <!--<li><a class="active" href="{{ base_url() }}/recette-type"><strong>Recette type</strong></a></li>-->
+	  <li style="float:right"><a class="active" href="{{ base_url() }}/login"><strong>{{ etatConnexion }} {{ userConnecte }}</strong></a></li>
+    </ul>
+</div>

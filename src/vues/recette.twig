@@ -1,0 +1,47 @@
+{% extends 'templates/cetomiam.twig' %}
+
+
+{% block  content %}
+	<!-- Page d'affichage d'une recette -->
+
+	<!-- Ajout du template de menu -->
+	{% include 'templates/parties/menu.twig' %}
+	<link
+	rel="stylesheet" href="{{base_url()}}/styles/recette.css"> <!-- Mise en page d'une recette (nom, ratio, nb de portions, calories) -->
+	<div class="recette">
+		<h3>{{r['nomRec']}}</h3>
+		<p id="ratio" style="font-weight: bold"><br>Ratio
+			{{r['ratioRec']}}</p><br>
+		<span>Nb portions 🍕 :
+			<input id="nb-personnes" type="number" min="1" value="1"></span>
+		<p>Calories ⚖️ :
+			<strong>
+				{{ calorie }}</strong>
+			kcal (<strong>{{ calorie }}</strong>
+			kcal par portion)
+		</p>
+
+		<!-- Aliments avec leur quantité qui varie en fonction du nombre de portions -->
+		<ul>
+			{%for a in c%}
+				<li>{{a['nomAli']}}
+					:
+					<strong>{{a['quantite']}}</strong>
+					g</li>
+			{% endfor %}
+		</ul>
+		<ul class="p1">
+			{%for a in c%}
+				<li>{{a['quantite']}}</li>
+			{% endfor %}
+		</ul>
+		<p class="remove-recette" id="remove-recette">🗑️</p>
+	</div>
+
+	<!-- Scripts js associés à la page -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+
+	<script src="{{ base_url() }}/scripts/mesrecettes.js"></script>
+
+{% endblock %}

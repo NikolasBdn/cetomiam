@@ -1,0 +1,100 @@
+{% extends 'templates/cetomiam.twig' %}
+
+{% block  content %}
+	<!-- Page du calculateur (+ Nouvelle recette) -->
+
+	<!-- Ajout du template de menu -->
+	{% include 'templates/parties/menu.twig' %}
+
+	<!-- Titre -->
+		<h3 class="titre"> 🍽️ Créer un nouveau repas 🥤</h3>
+	<div class="calculateur">
+
+
+		<!-- Partie gauche avec recherche d'aliments -->
+		<!-- Boite de recherche -->
+			<div class="recherche"> <input
+			type="text" id="rechercher-aliment" name="search" placeholder="Rechercher un aliment">
+			<!-- Boite d'affichage des aliments -->
+			<form class="resultats-aliment">
+				<select class="select-aliment" size="30">
+					<option>
+						Aucun aliment trouvé
+					</option>
+				</select>
+			</form>
+		</div>
+
+
+		<!-- Partie centrale qui représente l'ajout des aliments -->
+		<div class="aliments-ajout">
+			<h3>🥗 Aliments ajoutés à votre recette 🍣</h3>
+		</div>
+
+
+		<!-- Partie droite affichant les résultats de l'équilibrage -->
+		<div class="resultats">
+			<h3>Resultats</h3>
+			<!-- Ratio du patient -->
+			<div class="ratio-user">
+				<p><br>Votre ratio ({{ userRatio }})</p>
+				<input id="ratio-patient" type="text" name="" value="{{ userRatio }}" placeholder="votre ratio">
+			</div>
+			<!-- Ratio recette après équilibrage -->
+			<div class="ratio-recette">
+				<p>Ratio actuel de votre recette</p>
+				<input id="ratio-recette" name="" placeholder="ratio de la recette" disabled>
+			</div>
+			<!-- Nutriments de la recette après équilibrage -->
+			<div class="total-nutriments">
+				<h4><br>Total des nutriments</h4>
+				<section>
+					<p>Lipides (g)</p>
+					<input id="lipide" name="recette-lipide" placeholder="lipides" disabled>
+					<p>Proteines (g)</p>
+					<input id="proteine" name="recette-proteine" placeholder="proteines" disabled>
+					<p>Glucides (g)</p>
+					<input id="glucide" name="recette-glucide" placeholder="glucides" disabled>
+					<p><br>Calories (kcal)</p>
+					<input id="kcal" name="recette-kcal" placeholder="kcal" disabled>
+				</section>
+			</div>
+			<!-- Bouton d'équilibrage et d'enregistrement de la recette-->
+			<div class="bts">
+				<br>
+				<button class="bt-resultats bt-equilibrer">Equilibrer</button>
+				<button class="bt-resultats bt-save">Enregistrer</button>
+			</div>
+		</div>
+
+		<!-- Boite s'affichant après appuie sur le bouton Enregistrer -->
+		<div
+			id="myModal" class="modal">
+			<!-- Modal content -->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Enregistrez la recette dans votre espace :</p>
+				<input type='text' id='nom-recette' placeholder="Nom de votre recette">
+				<input type='number' min='0' id='nbpers-recette' placeholder="Nombre de portions">
+				<select class="type-recette" name="">
+					<option>Entrée</option>
+					<option>Plat</option>
+					<option>Dessert</option>
+					<option>Autres</option>
+				</select>
+				<button type="button" id="confirmer-recette" class="bt-confirmsave">Confirmer</button>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Scripts js associés à la page -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+
+	<script src="{{ base_url() }}/scripts/calculateur.js"></script>
+	<script src="{{ base_url() }}/scripts/enregistrementRecette.js"></script>
+	<script src="{{ base_url() }}/scripts/equilibrage.js"></script>
+
+
+{% endblock %}

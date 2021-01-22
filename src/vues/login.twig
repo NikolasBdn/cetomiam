@@ -1,0 +1,34 @@
+{% extends 'templates/cetomiam.twig' %}
+
+{% block  content %}
+	<!-- Page de connexion -->
+	<div class="masthead">
+		<header class="masthead">
+			<div class="row h-50 align-items-center justify-content-center text-center">
+				<div
+					id="login" class="col-lg-10 align-self-end">
+
+					<!-- Boites pour remplir son login et son mot de passe avec création d'erreur en cas de données éronnées -->
+					<form class="connection" action="{{base_url()}}/login" method="post">
+						{% if erreur != "good" %}
+							<p id="erreur">{{ erreur }}</p>
+						{% endif %}
+						<label id="text" for="">Nom d'utilisateur / Adresse mail</label>
+						<input type="text" name="login" value="">
+						<label id="text">Mot de passe</label>
+						<input
+						type="password" name="pwd" value="">
+
+						<!-- Boutons de connexion et d'inscription -->
+						<input id="connect" type="submit" name="" value="Se connecter">
+						<a class style="color:black; text-decoration: none; font-size: 19px; background-color: rgb(248, 141, 0); width: 100%; height=10%; padding: 11px 20px; margin: 15px 0; border: none; border-radius: 4px; cursor: pointer;" href="{{ base_url() }}/signup">S'inscrire</a>
+
+					</form>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
+
+{% endblock %}

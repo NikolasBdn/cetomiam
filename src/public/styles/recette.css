@@ -1,0 +1,44 @@
+/* --------------------------------------------------------------Mise en page de la page d'une recette----------------------------------------------------- */
+.recette {
+  width: 50%;
+  margin: 10px;
+  background-color: #F2F2F2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+
+  position: absolute; /* postulat de départ */
+  top: 50%; left: 50%; /* à 50%/50% du parent référent */
+  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+}
+
+/* Mise en page du bouton supprimer */
+#remove-recette {
+  font-size: 30px;
+  margin-left: 90%;
+  max-width: 30px;
+}
+
+#remove-recette:hover {
+  font-size: 30px;
+  text-shadow: 1px 1px 2px rgb(255, 0, 0), 0 0 1em #b40808, 0 0 0.2em #000000;
+}
+
+/* Mise en page du texte de la liste d'aliments, du titre de la recette et du ratio */
+.p1 {
+  position: absolute;
+  top: 0px;
+  left: -5000px;
+
+}
+
+h3 {
+  text-shadow: 1px 1px 2px rgb(151, 87, 4), 0 0 1em orange, 0 0 0.2em #fa9811;
+  text-align: center;
+}
+
+#ratio {
+  text-align: center;
+}

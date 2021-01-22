@@ -1,0 +1,349 @@
+/* ---------------------------------------------------------------------------------------------------CSS de la page du calculateur----------------------------------------------------------------------------*/
+.titre {
+  text-shadow: 1px 1px 2px orange, 0 0 1em #fa9811, 0 0 0.2em #000000;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 56px;
+}
+
+
+
+
+/* Mise en page du calculateur */
+.calculateur {
+  margin-bottom: 20px;
+  display: flex;
+  margin-top: 5px;
+  width: 100%;
+}
+
+
+
+
+/* -----------------------------------------------Mise en page de la boite partie gauche qui permet la recherche d'aliments--------------------------------------------------- */
+.recherche {
+  background-color: hsla(0, 0%, 0%, 0.5);
+  padding: 10px;
+  display: block;
+  width: 20%;
+  position: absolute;
+  left: 0;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+  margin-left: 5px;
+}
+
+#rechercher-aliment {
+  width: 90%;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.select-aliment {
+  background-color: hsla(0, 0%, 20%, 0.095);
+  color: white;
+  scrollbar-width: thin;
+  overflow: scroll;
+  width: 100%;
+}
+
+.select-aliment>option {
+  width: 300px;
+  white-space: normal;
+
+}
+
+
+
+
+
+
+/*-------------------------------------------------------------- Mise en page de la partie centrale lorsqu'un aliment est ajouté-------------------------------------------- */
+.aliments-ajout {
+  color: white;
+  text-align: center;
+  background-color: hsla(0, 0%, 0%, 0.483);
+  padding: 10px;
+  width: 50%;
+  height: 100%;
+  margin-left: 24%;
+  border: 1px solid white;
+  box-shadow: 1px 1px 2px grey inset,
+    -1px -1px 2px rgb(35, 34, 34) inset;
+  border-radius: 3px/6px;
+}
+
+.aliments-ajout .aliment {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ccc;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15) inset,
+    -1px -1px 2px rgba(0, 0, 0, 0.15) inset;
+  border-radius: 3px/6px;
+
+}
+
+.titre-aliment {
+  margin: 5px 10px;
+  grid-row: 1;
+  overflow: auto;
+}
+
+#verrouAlim {
+  color: white;
+  font-size: 15px;
+  text-align: right;
+}
+
+.div-supprimer-aliment {
+  grid-row: 1;
+  grid-column: 2;
+  font-size: 25px;
+  padding: 5px;
+}
+
+.supprimer-aliment {
+  width: 10%;
+  height: 50%;
+  text-align: right;
+}
+
+.supprimer-aliment:hover {
+  text-shadow: 1px 1px 2px rgb(236, 6, 6), 0 0 1em rgb(250, 0, 0), 0 0 0.2em #000000;
+}
+
+.aliment-input-quantite {
+  height: 30px;
+  margin: 5px;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------- Mise en page de la partie résultat à droite--------------------------------------------------------------------- */
+.calculateur-resultats {
+  margin-left: 20px;
+  background-color: #ffd486;
+  padding: 10px;
+  width: 30%;
+}
+
+.resultats {
+  text-align: center;
+  padding: 10px;
+  margin-right: 5px;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  right: 0;
+  border: 1px solid #ccc;
+  width: 20%;
+  box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+  position: absolute;
+  color: white;
+}
+
+.ingredient-total {
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column: 1;
+  grid-row: 2
+}
+
+#ratio-recette {
+  color: white;
+  background-color: hsla(0, 2%, 9%, 0.041);
+  text-align: center;
+  height: 30px;
+  margin-top: 5px;
+}
+
+.lipide {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#lipide {
+  color: white;
+  background-color: hsla(0, 2%, 9%, 0.041);
+  text-align: center;
+  height: 30px;
+
+  border-style: none;
+  font-weight: bolder;
+}
+
+.proteine {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+#proteine {
+  color: white;
+  background-color: hsla(0, 2%, 9%, 0.041);
+  text-align: center;
+  height: 30px;
+  border-style: none;
+  font-weight: bolder;
+}
+
+.glucide {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+#glucide {
+  color: white;
+  background-color: hsla(0, 2%, 9%, 0.041);
+  text-align: center;
+  height: 30px;
+  border-style: none;
+  font-weight: bolder;
+}
+
+.kcal {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+#kcal {
+  color: white;
+  background-color: hsla(0, 2%, 9%, 0.041);
+  text-align: center;
+  height: 30px;
+  border-style: none;
+  font-weight: bolder;
+}
+
+#nutriment-titre-lipide {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#nutriment-titre-proteine {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+#nutriment-titre-glucide {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.p100 {
+  position: absolute;
+  top: 0px;
+  left: -5000px;
+}
+
+.bt-resultats {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 140px;
+  height: 50px;
+}
+
+.bt-equilibrer {
+  background-color: #fa9811;
+}
+
+.bt-equilibrer:hover {
+  background-color: #f85b00;
+}
+
+.bt-save {
+  background-color: green;
+}
+
+.bt-save:hover {
+  background-color: rgb(11, 255, 11);
+}
+
+/*------------------------------------------------------------------- Mise en page de la boite apres appuie sur le bouton Enregistrer -------------------------------------------------*/
+#nbpers-recette {
+  padding: 10px;
+  width: 20%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+  margin-left: 5px;
+}
+
+#confirmer-recette {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 140px;
+  height: 50px;
+  margin-left: 3%;
+  background-color: #11b0fa;
+}
+
+#confirmer-recette:hover {
+  background-color: #114ffa;
+}
+
+.type-recette {
+  width: 300px;
+}
+
+
+
+/* ------------------------------------------------------------------------------Mise en page du modal content--------------------------------------------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,150 @@
+{% extends 'templates/cetomiam.twig' %}
+
+{% block  content %}
+	<!-- Cette page n'est pas affichée sur le site mais la recette pourrait ressembler à ça si le ptut est repris -->
+
+	<!-- Ajout du template de menu -->
+	{% include 'templates/parties/menu.twig' %}
+
+	<!-- Image de fonf et couleur du texte -->
+		<style>
+body {
+	background-image: url("{{ base_url() }}/styles/img/Wood-Wallpaper-Background-14.jpg");
+	color: white;
+}
+	</style>
+
+	<!-- Titre et barre donnant les indices de cuisson, du nombre de portions et le ratio -->
+		<h1><b>
+		🍔 Burger d'avocat au saumon fumé 🥑
+	</b>
+	</h1><h2 class="header_recette"> Préparation 🕒 : 15min
+		<span style="padding:0 0 0 20px;">Cuisson 🌡️:  /</span>
+		<span style="padding:0 0 0 20px;">Nb portions 👪 :
+			<input type="number" id="nbpers" name="nbpers" placeholder="1" step="1" min="1">
+		</span>
+		<span style="padding:0 0 0 20px;">Ratio:
+			<input type="number" placeholder="1.0" step="0.1" id="ratio" name="ratio"></span>
+	</h2>
+
+	<!-- Liste des aliments à équilibrer -->
+	<div class="div-recette">
+		<p class="image_recette"><img src="{{ base_url() }}/styles/img/Burger-davocat-au-saumon-fum%C3%A9.jpg" width="425" height="320"></p>
+		<div class="calculateur-recipe">
+			<label for="ig1">Avocat</label>
+			<br><input type="number" id="ingredient1" name="ig1" placeholder="Quantité voulue" step="1" min="0"><span>
+				grammes</span>
+			<br>
+			<label for="ig2">Saumon</label>
+			<br><input type="number" id="ingredient2" name="ig2" placeholder="Quantité voulue" step="1" min="0"><span>
+				grammes</span>
+			<br><label for="igSup">Ingrédient Supplémentaire</label>
+			<br><input type="text" id="recherchAlim" name="igSup" placeholder="Ingrédient voulu">
+
+			<br><input type="submit" value="Submit">
+		</div>
+
+		<!-- Liste des ingédients pour la recette -->
+		<div class="liste_ingredient" style="line-height:22px;">
+			<ul>
+				<li>1 avocat</li>
+				<li>2 belles tranches de saumon</li>
+				<li>1 cuillère à café pleine de mascarpone</li>
+				<li>1 cuillère à soupe de vinaigre de cidre</li>
+				<li>5 brins de coriandre fraîche</li>
+				<li>8 feuilles de menthe fraîche</li>
+				<li>1 rondelle d'oignon rouge</li>
+				<li>3 tranches de radis noir</li>
+				<li>4 tranches de concombre</li>
+				<li>1 salade</li>
+				<li>1 cuillère à soupe de graines de sésame grillées à sec</li>
+				<li>Sel rose de l'Himalaya</li>
+				<li>Poivre</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Affichage des données après équilibrage -->
+	<div class="div_apport">
+		<p>
+			Kcal: x
+			<span style="padding:0 0 0 20px;">Lipides:
+			</span>
+			<span style="padding:0 0 0 20px;">Glucides:
+			</span>
+			<span style="padding:0 0 0 20px;">Protéines:
+			</span>
+		</p>
+	</div>
+
+	<!-- Ztapes de la recette -->
+	<div class="div_Etape">
+		<p class="titre_recette">👨‍🍳 Préparation pour un hamburger 👩‍🍳</p>
+		<p>
+			<span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 1</b>
+				</font>
+			</span>
+			<br>Couper une rondelle fine dans un oignon rouge et réserver.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 2</b>
+				</font>
+			</span>
+			<br>Puis couper en deux un avocat, retirer le noyau, et avec une cuillère à soupe évider chaque demi avocat en essayant de lui donner la forme d'un demi bun.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 3</b>
+				</font>
+			</span>
+			<br>
+			Pour préparer la sauce verser la cuillère de mascarpone dans un petit ramequin avec le vinaigre de cidre. Bien mélanger les deux ensemble pour former une crème épaisse et la saler au goût.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 4</b>
+				</font>
+			</span>
+			<br>Prélever 5 brins de coriandre fraîche et les feuilles d'une tige de menthe et les ciseler finement.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 5</b>
+				</font>
+			</span>
+			<br>Ensuite ajouter les feuilles ciselées dans la sauce et mélanger le tout.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 6</b>
+				</font>
+			</span>
+			<br>Verser toute la crème dans le creux d'un demi avocat et surmonter de la rondelle mise de côté en défaisant les anneaux.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 7</b>
+				</font>
+			</span>
+			<br>Par ailleurs poser une ou deux feuilles de salade dessus. Suivi du saumon fumé.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 8</b>
+				</font>
+			</span>
+			<br>Enfin recouvrir le dôme de saumon fumé avec l'intérieur de l'autre moitié d'avocat et saupoudrer le tout de piment d'Espelette.
+			<br>
+			<br><span style="padding:0 0 0 20px;">
+				<font color="#00d4ff">
+					<b>Étape 9</b>
+				</font>
+			</span>
+			<br>Faire griller à sec dans une poêle les graines de sésame et les saupoudrer sur la salade et l'avocat. Ajouter des morceaux fins de radis noir et des tranches de concombre à la salade qui entoure le "burger".
+		</p>
+	</div>
+
+{% endblock %}

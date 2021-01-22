@@ -1,0 +1,43 @@
+{% extends 'templates/cetomiam.twig' %}
+
+{% block  content %}
+	<!-- Page d'affichage des recettes -->
+
+	<!-- Ajout du template de menu -->
+	{% include 'templates/parties/menu.twig' %}
+	<link
+	rel="stylesheet" href="{{base_url()}}/styles/mesrecettes.css"> <!-- Barre de recherche des recettes et tri par catégorie -->
+	<div class="recette-recherche">
+		<label>Recherche 🔎</label>
+		<input id="recherche-recette" type="text" name="recherche">
+		<select class="type-recette" name="">
+			<option value="">Catégories</option>
+			<option value="">Entrée</option>
+			<option value="">Plat</option>
+			<option value="">Dessert</option>
+			<option value="">Autres</option>
+		</select>
+	</div>
+
+	<!-- Affichage des recettes enregistrées par l'utilisateur (nom, ratio, catégorie, kcal) -->
+	<div class="recettes-liste">
+		{% for r in recettes %}
+			<a id='{{r['idRec']}}' class="recette" href='{{ base_url() }}/recette/{{r['tokenRec']}}'>
+				<h4 style=>{{r['nomRec']}}</h4>
+				<p id="categ">Catégorie :
+					{{r['typeRec']}}</p><br>
+				<p>Ratio :
+					{{r['ratioRec']}}</p>
+				<p>Calories :
+					{{r['kcal']}}</p><br>
+			</a>
+		{% endfor %}
+	</div>
+
+	<!-- Scripts js associés à la page -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+
+	<script src="{{ base_url() }}/scripts/mesrecettes.js"></script>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'templates/cetomiam.twig' %}
+
+	{% block  content %}
+	<!-- Page d'inscription -->
+		<div class="masthead"> <header class="masthead">
+			<div class="row h-50 align-items-center justify-content-center text-center">
+				<div
+					id="signup" class="col-lg-10 align-self-end">
+
+					<!-- Boites pour remplir ses informations personnelles avec création d'erreur en cas de données éronnées -->
+					<form class="connection" action="{{base_url()}}/signup" method="post">
+						{% if erreur != "good" %}
+							<p id="erreur">{{ erreur }}</p>
+						{% endif %}
+						<label for="">Pseudo</label>
+						<input type="text" name="pseudo" value="{{ post["pseudo"] }}" required>
+						<label for="">Email</label>
+						<input id="email" type="email" name="email" value="{{ post["email"] }}" required>
+						<label id="mdp">Mot de passe</label>
+						<input type="password" name="pwd1" value="" required>
+						<label>Confirmation du mot de passe</label>
+						<input type="password" name="pwd2" value="" required>
+						<label id="mdp">Ratio</label>
+						<input
+						id="ratio" type="number" min='0' step="0.1" name="ratio" value="{{ post["ratio"] }}">
+            
+						<!-- Bouton qui permet de vlaider l'inscription -->
+						<input id="connect" type="submit" name="signup" value="S'inscrire">
+					</form>
+				</div>
+			</div>
+		</header>
+	</div>
+
+{% endblock %}

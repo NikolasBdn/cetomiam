@@ -1,0 +1,65 @@
+/* ------------------------------------------------Mise en page de la page Mes recettes ------------------------------------------------------*/
+
+/* Mise en page de la barre de recherche (recherche + catégorie) pour retrouver une recette */
+.recette-recherche {
+  margin: 40px;
+  margin-top: 85px;
+  background-color: #F2F2F2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+    -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mise en page de la boite de recherche */
+.recette-recherche>input {
+  width: 50%;
+}
+
+/* Mise en page de l'affichage de la liste des recettes de l'utilisateur */
+.recettes-liste {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Mise en page de l'affichage de chaque recette de la liste des recettes de l'utilisateur */
+.recette {
+  margin: 10px;
+  height: 110px;
+  width: auto;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 3px/6px;
+  flex-wrap: wrap;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: #46352A;
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px #000000 inset, -1px -1px 2px #000000 inset;
+}
+
+
+/* Mise en page de texte */
+a {
+  text-decoration: none;
+  color: Black;
+}
+
+h4 {
+  margin-top: 3px;
+  color: white;
+  text-shadow: 1px 1px 2px orange, 0 0 1em #fa9811, 0 0 0.2em #000000;
+}
+
+#categ {
+  font-size: 13px;
+  color: #000000;
+}
